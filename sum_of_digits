@@ -1,0 +1,12 @@
+two_digits = input("Enter a two digit number:")
+
+first_digit = int(two_digits[0])
+print(first_digit)
+second_digit = int(two_digits[1])
+print(second_digit)
+
+print("Sum of two digits is : ", first_digit+second_digit)
+
+#Write a program that adds the digits in a 2 digit number. e.g. if the input was 35, then the output should be 3 + 5 = 8
+
+#Warning. Do not change the code on lines 1-3. Your program should work for different inputs. e.g. any two-digit number.
