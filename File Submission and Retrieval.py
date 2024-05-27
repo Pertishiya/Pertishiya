@@ -17,31 +17,27 @@ current_date_str = current_date.strftime("%d%m%Y")
 
 current_date_ack = current_date.strftime("%Y-%m-%d")
 
-Submission = "V://SFTP//EMIR_REFID.bat"
-Retrieval = "V://SFTP//EMIR_REFID.bat"
+Submission = "V://SFTP//SUB.bat"
+Retrieval = "V://SFTP//ACK.bat"
 '''
 if len(sys.argv)!=2:
     print("Usuage: python script.py <firm>")
     logging.error("Usuage: python script.py <firm>")
 firm = sys.argv[1]
 '''
-#if sys.argv[1] == 'CFL':
+#if sys.argv[1] == 'AAA':
 source_path = "E://Handson//EMIR//"
 processed_path = "E://Handson//EMIR//Submitted/"
 temp_path = "E://Handson/EMIR/ACK_NACK/temp/"
 ack_path = "E://Handson/EMIR/ACK_NACK"
 log_path = "E://Handson/EMIR/CFL_EMIR_REFID_SUB_ACK.log"
-submission_flow = "CFL_EMIR_REFID_SUB"
-retrieval_flow = "CFL_EMIR_REFID_ACK"
+submission_flow = "SUB" #call property file
+retrieval_flow = "ACK"
 #else:
 #    print("Please give valid firm name")
 
 logging.basicConfig(filename = log_path, level=logging.INFO)
 
-
-#check condition
-#if sys.argv[1] == "EQD":
-#    conditions["Collateral"] = f"Collateral_House_{current_date_str}"
 
 if not os.path.exists(processed_path):
     os.makedirs(processed_path)
@@ -98,7 +94,7 @@ def unzip_rename_ack(sftp_ack_path,sftp_ack_file,condtion,firm):
 #declaring conditions
 conditions = {
     "Position": f"Position_{current_date_str}",
-    "Collateral": f"Collateral_{current_date_str}"
+    "Transaction": f"Transaction_{current_date_str}"
 }
 
 filenames_dict = sub_filenames_with_string(source_path,conditions)
