@@ -30,7 +30,7 @@ source_path = "E://Handson//EMIR//"
 processed_path = "E://Handson//EMIR//Submitted/"
 temp_path = "E://Handson/EMIR/ACK_NACK/temp/"
 ack_path = "E://Handson/EMIR/ACK_NACK"
-log_path = "E://Handson/EMIR/CFL_EMIR_REFID_SUB_ACK.log"
+log_path = "E://Handson/EMIR/SUB_ACK.log"
 submission_flow = "SUB" #call property file
 retrieval_flow = "ACK"
 #else:
