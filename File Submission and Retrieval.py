@@ -17,8 +17,8 @@ current_date_str = current_date.strftime("%d%m%Y")
 
 current_date_ack = current_date.strftime("%Y-%m-%d")
 
-Submission = "V://SFTP//SUB.bat"
-Retrieval = "V://SFTP//ACK.bat"
+Submission = "G://SFTP//SUB.bat"
+Retrieval = "G://SFTP//ACK.bat"
 '''
 if len(sys.argv)!=2:
     print("Usuage: python script.py <firm>")
