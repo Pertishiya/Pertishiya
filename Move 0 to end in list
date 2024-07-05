@@ -1,0 +1,7 @@
+print("To move 0's to end of list")
+lst = [1,0,3,5,0,2,0,7,0,0,8]
+for num in lst:
+    if num == 0:
+        lst.remove(num)
+        lst.append(num)
+print(lst)
