@@ -1,0 +1,18 @@
+print("Find if sum are two numbers in an array is target using hashing method")
+
+def find_pair_with_sum(arr, target_sum):
+    seen_numbers = set()
+    for number in arr:
+        if target_sum - number in seen_numbers: # 6 5 4 3 2
+            print(f"target_sum - number: {target_sum - number}")
+            print(f"Seen  numbers not modified as number already present: {seen_numbers}")
+            return (target_sum-number,number)
+        seen_numbers.add(number)
+        print(f"Seen  numbers: {seen_numbers}")
+    return None
+
+# Example usage:
+#arr = [1, 2, 3, 4, 5]
+arr = [2,7,11,15]
+target_sum = 9
+print(find_pair_with_sum(arr, target_sum))
